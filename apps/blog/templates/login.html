@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <h4>{{ message }}</h4>
+    {% endfor %}
+</ul>
+{% endif %}
+  <h1>Login</h1>
+  <form action="login" method="post" class="login-form">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Log in</button>
+    <p>Don't have an account? <a href="{% url 'signup' %}">Sign Up Now</a></p>
+    <p>Don't have an account? <a href="{% url 'forget_password' %}">forget password or username</a></p>
+  </form>
+{% endblock %}

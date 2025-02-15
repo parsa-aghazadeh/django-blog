@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <h4>{{ message }}</h4>
+    {% endfor %}
+</ul>
+{% endif %}
+
+  {% for post in posts%}
+  <h2 class="post-title">
+  <a href="posts/{{post.id}}/">{{post.title}}</a>
+  </h2>
+  <p><h5 style="font-weight: bold" class="media-heading">{{post.user.first_name}}  {{post.user.last_name}} </p>
+  <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.created_at }}</p>
+  <p>{{ post.content|truncatechars:180 }}</p>
+  <h5> ❤️  {{ total_likes }} </h5>
+  <a class="btn btn-default" href="posts/{{post.id}}/">Read More</a>
+  <hr>
+  
+  {% endfor %}
+{% endblock %}

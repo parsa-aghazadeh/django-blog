@@ -1,0 +1,94 @@
+
+{% extends "base.html" %}
+{% block content %}
+  <h1 class="post-title">{{post.title}}</h1>
+  <h4>{{post.user.first_name}} {{post.user.last_name}}</h4>
+  <hr>
+  <p><span class="glyphicon glyphicon-time"></span> Posted on {{post.created_at}}</p>
+  <hr>
+  <p>{{post.content}}</p>
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <title>دکمه لایک</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+      <style>
+      .like-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .fa-heart {
+        color: gray;
+        font-size: 24px;
+      }
+      
+      .liked .fa-heart {
+        color: red;
+      }
+      </style>
+  </head>
+  <body>
+      <button class="like-button">
+          <i class="fa fa-heart"></i>
+      </button>
+
+      <script>
+      const likeButton = document.querySelector('.like-button');
+
+      likeButton.addEventListener('click', () => {
+          var myHeaders = new Headers();
+          myHeaders.append("User-Agent", "Apidog/1.0.0 (https://apidog.com)");
+          
+          var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            redirect: 'follow'
+          };
+          
+          fetch("http://127.0.0.1:8000/api/posts/{{post.id}}/like", requestOptions)
+            .then(response => response.text())
+            .then(function(result){
+              obj_data = JSON.parse(result)
+              if (obj_data.like_status=="liked"){
+                likeButton.classList.add('liked')
+              }else{
+                likeButton.classList.remove('liked')
+              }
+            })
+            .catch(error => console.log('error', error));
+
+          //likeButton.classList.toggle('liked');
+      });
+      </script>
+  </body>
+  </html>
+  <hr>
+  {% if commentable %}
+  <div class="well">
+    <h4>Leave a Comment:</h4>
+    <form action="{% url 'add_comment' post.id %}" method="POST" role="form">
+      <div class="form-group">
+        <textarea class="form-control" name="content" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  {% endif %}
+  <hr>
+  {% for comment in comments %}
+  <div class="media">
+    <a class="pull-left" href="">
+      <img class="media-object" src="http://placehold.it/64x64" alt="">
+    </a>
+    <div class="media-body">
+      <h5 style="font-weight: bold" class="media-heading">{{ comment.user.first_name }} {{ comment.user.last_name }}
+        <small>{{comment.created_at}}</small>
+      </h5>
+      {{comment.content}}
+    </div>
+  </div>
+
+  {% endfor %}
+{% endblock %}
