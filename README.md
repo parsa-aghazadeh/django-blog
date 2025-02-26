@@ -1,22 +1,14 @@
-این پروژه یک وبلاگ ساده و کاربردی است که با استفاده از فریم‌ورک قدرتمند Django و پایگاه داده MySQL ساخته شده است. هدف از این پروژه، فراهم کردن بستری برای کاربران جهت ایجاد، مشاهده و مدیریت پست‌ها است. علاوه بر این، امکانات دیگری نظیر ثبت نام و ورود کاربران، مدیریت پروفایل، جستجوی پیشرفته پست‌ها، سیستم نظرات و API  تمامی امکانات ذکر شده نیز در این پروژه پیاده‌سازی شده است.
+This project is a simple and practical blog built using the powerful Django framework and MySQL database. The goal of this project is to provide a platform for users to create, view, and manage posts. In addition, other features such as user registration and login, profile management, advanced post search, a comment system, and an API for all the mentioned features have also been implemented in this project.
 
-ویژگی‌های کلیدی
-مدیریت جامع پست‌ها: کاربران می‌توانند پست‌های جدید ایجاد کنند، پست‌های موجود خود را ویرایش یا حذف کنند و لیست پست‌ها را به صورت دسته‌بندی شده و منظم مشاهده کنند. همچنین امکان ذخیره و لایک پست‌ها نیز فراهم شده است.
+Key Features:
 
-سیستم مدیریت کاربران: کاربران می‌توانند به راحتی در سایت ثبت نام کنند، وارد حساب کاربری خود شوند و پروفایل خود را مدیریت کنند. امکان فراموشی رمز عبور و بازیابی آن نیز در نظر گرفته شده است.
-
-جستجوی پیشرفته: کاربران می‌توانند پست‌ها را بر اساس عنوان، محتوا و حتی نویسنده جستجو کنند. این امکان جستجوی سریع و دقیق مطالب مورد نظر را فراهم می‌کند.
-
-سیستم نظرات: کاربران می‌توانند زیر پست‌ها نظر ارسال کنند و با دیگران در مورد مطالب به اشتراک گذاشته شده بحث و گفتگو کنند.
-
-و API کاربردی: این پروژه دارای API قدرتمندی برای انجام عملیات مختلف مانند ثبت نام، ورود، ایجاد پست، مدیریت نظرات، لایک و ذخیره پست‌ها و... است. این API به توسعه‌دهندگان امکان می‌دهد تا از امکانات وبلاگ در برنامه‌های دیگر نیز استفاده کنند.
-
-مدیریت نقش‌ها: امکان تعریف نقش‌های مختلف برای کاربران (مانند مدیر و کاربر عادی) وجود دارد. مدیر سایت می‌تواند کاربران را مدیریت کند و به آنها دسترسی‌های مختلف بدهد.
-
-تایید پست‌ها: برای جلوگیری از انتشار محتوای نامناسب، پست‌های ارسالی توسط کاربران قبل از انتشار توسط مدیر سایت باید تایید شوند.
-
-رابط کاربری جذاب و واکنش‌گرا: رابط کاربری این وبلاگ با استفاده از HTML, CSS و JavaScript طراحی شده است و تجربه کاربری لذت‌بخشی را برای کاربران فراهم می‌کند. 
-
-پیاده‌سازی Viewها به دو صورت: Viewهای این پروژه هم در قالب فایل‌های HTML, CSS و جاوااسکریپت رندر شده‌اند و هم به صورت http response قابل دسترس هستند. این امر انعطاف‌پذیری بالایی را برای توسعه‌دهندگان فراهم می‌کند.
-
-در ضمن Endpointهای JSON: تمامی viewهای پروژه به صورت endpointهای JSON پیاده‌سازی شده‌اند و داده‌ها را به صورت JSON برمی‌گردانند. این امکان ارتباط آسان برنامه‌های دیگر با API پروژه را فراهم می‌کند.
+Comprehensive Post Management: Users can create new posts, edit or delete their existing posts, and view the list of posts in a categorized and organized manner. The ability to save and like posts is also provided.
+User Management System: Users can easily register on the site, log in to their accounts, and manage their profiles. Password recovery is also considered.
+Advanced Search: Users can search for posts based on title, content, and even author. This feature enables fast and accurate searches for desired content.
+Comment System: Users can post comments under posts and discuss shared content with others.
+Functional API: This project has a powerful API for various operations such as registration, login, post creation, comment management, liking and saving posts, etc. This API allows developers to use the blog's features in other applications.
+Role Management: The ability to define different roles for users (such as administrator and regular user) exists. The site administrator can manage users and grant them various access levels.
+Post Approval: To prevent the publication of inappropriate content, posts submitted by users must be approved by the site administrator before publication.
+Attractive and Responsive User Interface: The blog's user interface is designed using HTML, CSS, and JavaScript, providing a pleasant user experience.
+Implementation of Views in Two Ways: The views of this project are rendered both in the form of HTML, CSS, and JavaScript files and are accessible as HTTP responses. This provides high flexibility for developers.
+JSON Endpoints: All project views are implemented as JSON endpoints and return data in JSON format. This enables easy communication between other applications and the project's API.
